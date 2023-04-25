@@ -27,51 +27,24 @@
         <table>
             <thead>
                 <tr>
-                    <th>User</th>
-                    <th>Date Order</th>
-                    <th>Status</th>
+                    <th>visiteur</th>
+                    <th>telephone</th>
+                    <th>email</th>
+                    <th>montant</th>
+                    <th>motif</th>
+                    <th>status</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let order of Orders">
                     <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
+                        <p>{{order.rN}}</p>
                     </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
+                    <td>{{order.rT}}</td>
+                    <td>{{order.rE}}</td>
+                    <td>{{order.rMt}}</td>
+                    <td>{{order.motif}}</td>
+                    <td>{{order.status}}</td>
                 </tr>
             </tbody>
         </table>
