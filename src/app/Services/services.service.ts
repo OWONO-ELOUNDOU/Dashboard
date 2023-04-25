@@ -15,17 +15,17 @@ export class ServicesService {
 
   /* =========== Function to get all Documents ========== */
   getFiles() {
-    return this.http.get<{[key: string]: File}>(this.endPoint + '/Document.json')
+    return this.http.get<{[key: string]: File}>('https://windows-237-default-rtdb.europe-west1.firebasedatabase.app/document.json')
   };
 
   /* ========= Function to get all Links ========= */
   getLinks() {
-    return this.http.get<{[key : string]: Link}>(this.endPoint + '/Link.json')
+    return this.http.get<{[key : string]: Link}>('https://windows-237-default-rtdb.europe-west1.firebasedatabase.app/link.json')
   };
 
   /* ========= Function to get all Transactions =========== */
   getTasks() {
-    return this.http.get<{[key : string]: Link}>(this.endPoint + '/demande.json')
+    return this.http.get<{[key : string]: Link}>('https://windows-237-default-rtdb.europe-west1.firebasedatabase.app/demande.json')
   };
 
 }

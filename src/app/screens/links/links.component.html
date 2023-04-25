@@ -27,51 +27,16 @@
         <table>
             <thead>
                 <tr>
-                    <th>User</th>
-                    <th>Date Order</th>
-                    <th>Status</th>
+                    <th>Nom</th>
+                    <th>Categorie</th>
+                    <th>Adresse</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
+                <tr *ngFor="let link of Links">
+                    <td>{{ link.fname }}</td>
+                    <td>{{ link.categorie }}</td>
+                    <td><a href="{{ link.url }}">{{ link.url }}</a></td>
                 </tr>
             </tbody>
         </table>
