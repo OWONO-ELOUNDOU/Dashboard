@@ -28,15 +28,8 @@ export class LinksComponent {
     .subscribe((links) => {
       console.log(links);
       this.Links = links;
+      console.log(this.Links.length)
     })
-    //console.log(this.Links);
-    console.log(this.linkCount())
-  }
-
-  linkCount() {
-    let nbLink = this.Links.length;
-    localStorage.setItem('nbLink',JSON.stringify(nbLink));
-    return this.Links.length;
   }
 
 }
