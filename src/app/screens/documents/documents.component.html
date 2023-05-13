@@ -38,3 +38,16 @@
         </table>
     </div>
 </div>
+
+<!-- Add documents section start -->
+<form #docForm="ngForm" class="form" (ngSubmit)="onSubmit(docForm.value)">
+    <span class="title">Ajouter un document</span>
+    <input type="text" name="nom" class="input" placeholder="nom du document" ngModel>
+    <input type="text" name="image" class="input" placeholder="chemin image" ngModel>
+    <input type="text" name="adresse" class="input" placeholder="chemin document" ngModel>
+    <div class="loader" *ngIf="isLoading">
+        <app-loader></app-loader>
+    </div>
+    <button type="submit">Register</button>
+</form>
+<!-- Add documents section end -->

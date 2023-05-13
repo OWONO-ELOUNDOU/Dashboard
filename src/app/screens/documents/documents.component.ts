@@ -9,6 +9,7 @@ import { ServicesService } from 'src/app/Services/services.service';
 })
 export class DocumentsComponent {
   Files: any[] = [];
+  isLoading = false;
 
   constructor(
     private service: ServicesService
@@ -27,8 +28,26 @@ export class DocumentsComponent {
     .subscribe((files) => {
       console.log(files);
       this.Files = files;
+      console.log(this.Files.length);
+      localStorage.setItem('nbFile', JSON.stringify(this.Files.length));
     })
     console.log(this.Files);
+  }
+
+  onSubmit(doc: {
+    nom: string,
+    image: string,
+    adresse: string
+  }) {
+    this.isLoading = true;
+    this.service.createDoc(doc).subscribe((res) => {
+      console.log(res);
+      this.isLoading = false;
+      alert('le document a été enregistré');
+    }, (error) => {
+      this.isLoading = false;
+      alert('une erreur est survenue');
+    })
   }
 
 }

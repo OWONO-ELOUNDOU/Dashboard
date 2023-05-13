@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   nbLink = localStorage.getItem('nbLink');
+  nbFile = localStorage.getItem('nbFile');
 
   constructor() { }
 
