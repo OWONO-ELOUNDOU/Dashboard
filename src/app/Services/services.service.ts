@@ -18,26 +18,26 @@ export class ServicesService {
 
   /* =========== Function to get all Documents ========== */
   getFiles() {
-    return this.http.get<{[key: string]: File}>('https://windows-237-default-rtdb.europe-west1.firebasedatabase.app/document.json')
+    return this.http.get<{[key: string]: File}>(this.endPoint + 'document.json')
   };
 
   /* ========= Function to get all Links ========= */
   getLinks() {
-    return this.http.get<{[key : string]: Link}>('https://windows-237-default-rtdb.europe-west1.firebasedatabase.app/link.json')
+    return this.http.get<{[key : string]: Link}>(this.endPoint + 'link.json')
   };
 
   /* ========= Function to get all Transactions =========== */
   getTasks() {
-    return this.http.get<{[key : string]: Task}>('https://windows-237-default-rtdb.europe-west1.firebasedatabase.app/demande.json')
+    return this.http.get<{[key : string]: Task}>(this.endPoint + 'demande.json')
   };
 
   getOrders() {
-    return this.http.get<{[key : string]: Order}>('https://windows-237-default-rtdb.europe-west1.firebasedatabase.app/Transaction.json')
+    return this.http.get<{[key : string]: Order}>(this.endPoint + 'Transaction.json')
   }
 
   /* ========= Function to get all Users =========== */
   getUsers() {
-    return this.http.get<{[key : string]: User}>('https://windows-237-default-rtdb.europe-west1.firebasedatabase.app/users.json')
+    return this.http.get<{[key : string]: User}>(this.endPoint + 'users.json');
   }
 
 
@@ -49,6 +49,11 @@ export class ServicesService {
         'content-type': 'application/json'
       }
     })
+  }
+
+  // Delete User with Id
+  deleteUser(userId: string) {
+    this.http.delete(this.endPoint + 'users.json' + userId)
   }
 
 }

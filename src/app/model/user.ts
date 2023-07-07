@@ -1,4 +1,5 @@
 export interface User {
+town: any;
     fname: string;
     lname: string;
     email: string;

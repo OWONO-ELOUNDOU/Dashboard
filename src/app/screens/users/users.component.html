@@ -11,10 +11,16 @@
         </li>
         </ul>
     </div>
-    <a href="#" class="btn-download">
-        <i class="bx bxs-cloud-download"></i>
-        <span class="text">Download PDF</span>
-    </a>
+    <div class="button">
+        <a href="#" class="btn-download">
+            <i class="bx bxs-cloud-download"></i>
+            <span class="text">Download PDF</span>
+        </a>
+        <a (click)="showUserList()" class="btn-download">
+            <i class="bx bxs-plus"></i>
+            <span class="text">Actualiser</span>
+        </a>
+    </div>
 </div>
 
 <div class="table-data">
@@ -27,51 +33,30 @@
         <table>
             <thead>
                 <tr>
-                    <th>User</th>
-                    <th>Date Order</th>
-                    <th>Status</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>adresse mail</th>
+                    <th>téléphone</th>
+                    <th>ville</th>
+                    <th>pays</th>
+                    <th>inscription</th>
+                    <th>dernière connexion</th>
+                    <th>option</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let user of usersList">
+                    <td><!--<img [src]="">--><p>{{ user.fname }}</p></td>
+                    <td>{{ user.lname }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>{{ user.town }}</td>
+                    <td>{{ user.country }}</td>
+                    <td></td>
+                    <td></td>
                     <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
+                        <button><i class="bx bx-search"></i></button>
                     </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="../../../assets/images/image.png">
-                        <p>Madison Carter</p>
-                    </td>
-                    <td>01.10.2021</td>
-                    <td><span class="status complete">Completed </span></td>
                 </tr>
             </tbody>
         </table>

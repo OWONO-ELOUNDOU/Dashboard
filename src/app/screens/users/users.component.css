@@ -30,6 +30,13 @@ ul {
     color: #3c91e6;
     pointer-events: unset;
 }
+.head-title .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 .head-title .btn-download {
     height: 36px;
     padding: 0 16px;

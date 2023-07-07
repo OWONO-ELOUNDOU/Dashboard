@@ -8,11 +8,13 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   nbLink = localStorage.getItem('nbLink');
   nbFile = localStorage.getItem('nbFile');
+  nbUser = localStorage.getItem('nbUser');
 
   constructor() { }
 
   ngOnInit(): void{
     console.log('le nombre de liens est', this.nbLink);
+    console.log('le nombre de visiteurs est', this.nbUser);
   }
 
 }
